@@ -24,12 +24,6 @@ if ("$env:PROCESSOR_ARCHITEW6432" -ne "ARM64") {
     Exit $lastexitcode
   }
 }
-    
-# Create file for detection script
-if (-not (Test-Path "$($env:ProgramData)\WindowsCleanup")) {
-  Mkdir "$($env:ProgramData)\WindowsCleanup"
-}
-Set-Content -Path "$($env:ProgramData)\WindowsCleanup\1.3.txt" -Value "Windows cleaned up!"
 
 # Logging Preparation
 
@@ -109,3 +103,5 @@ foreach ($app in $builtinappstoremove) {
 
 Write-Log "END - All specified built-in apps were removed succesfully"
 Write-Log $BreakingLine
+
+exit 0
