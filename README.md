@@ -16,12 +16,16 @@ To create and deploy the Win32 app package, you will need the following:
 To create the Win32 app package:
 
 1. Clone or download this repository to your local computer.
-2. Open the Win32 Content Prep Tool and select **Create a package**.
-3. In the **Package Details** section, provide a name and other required information for the package.
-4. In the **Installer** section, select **Add Installer** and specify the path to the `RunScript.bat` file.
-5. In the **Detection** section, specify a method for detecting whether the package has already been installed.
-6. In the **Dependencies** section, specify any files or programs that are required for the script to run correctly.
-7. In the **Finish** section, specify a location to save the package and click the **Create** button.
+2. Open cmd and go to the path of the Win32 Content Prep Tool (IntuneWinAppUtil).
+3. Run the following command to create the Win32 app package:
+```
+   IntuneWinAppUtil -c <path_to_cloned_repository> -s <path_to_RunScript.bat> -o <output_folder> <-q>
+```
+4. This command will generate the .intunewin file from the specified source folder and setup file.
+   For MSI setup file, this tool will retrieve required information for Intune.
+   If -a is specified, all catalog files in that folder will be bundled into the .intunewin file.
+   If -q is specified, it will be in quiet mode. If the output file already exists, it will be overwritten.
+   Also, if the output folder does not exist, it will be created automatically.
 
 ## Deploying the Win32 App Package through Intune
 
