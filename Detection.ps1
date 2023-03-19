@@ -1,0 +1,1 @@
+if (Get-AppxPackage -Name Microsoft.BingWeather) { exit 1 } else { exit 0 }

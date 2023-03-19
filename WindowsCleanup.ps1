@@ -12,7 +12,7 @@
   Creation Date:  22-03-2021
   Updated to 1.1: 22.06.2021 - correcting typo from "Microsft.windowscommunicationsapps" -> "Microsoft.windowscommunicationsapps" 
   Updated to 1.2: 19.12.2021 - adding Teams chat icon for Windows 11
-  Update to 1.3:  19.03.2023 - removed Microsoft.Photos
+  Update to 1.3:  19.03.2023 - removed Microsoft.Photos and Edge from the list of apps to remove
 #>
 
 

@@ -30,13 +30,13 @@ To create the Win32 app package:
 ## Deploying the Win32 App Package through Intune
 
 To deploy the Win32 app package through Microsoft Intune:
-
+[label](https://endpoint.microsoft.com/)
 1. Log in to your Microsoft Intune account.
-2. Select **Apps** from the sidebar and click **Add**.
-3. Select **Line-of-business app** and click **Select**.
+2. Select **Apps** > **Windows** from the sidebar and click **Add**.
+3. Select **Windows app (Win32)** and click **Select**.
 4. In the **App package file** section, select **Upload** and browse to the location of the Win32 app package created in the previous step.
-5. Fill in the required details, including the name, publisher, and installation command.
-6. Under **App install behavior**, select **Only once per user** to ensure that the Win32 app runs only once during the device provisioning process.
+5. Fill in the required details, including the name, publisher, install (``RunScript.bat``) and uninstall (``RunScript.bat``) command.
+6. Under Detection rules, select **Custom detection rule** and upload Detection.ps1
 7. Assign the app to a group of devices or users and click **Save**.
 
 Once the app is deployed, it will run the PowerShell script to remove the built-in Windows apps specified in the `WindowsCleanup.ps1` file. The log file for the script will be stored in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs\win32-WindowsCleanup.log`.
