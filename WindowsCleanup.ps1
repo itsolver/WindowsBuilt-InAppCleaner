@@ -25,6 +25,12 @@ if ("$env:PROCESSOR_ARCHITEW6432" -ne "ARM64") {
   }
 }
     
+# Create file for detection script
+if (-not (Test-Path "$($env:ProgramData)\WindowsCleanup")) {
+  Mkdir "$($env:ProgramData)\WindowsCleanup"
+}
+Set-Content -Path "$($env:ProgramData)\WindowsCleanup\1.3.txt" -Value "Windows cleaned up!"
+
 # Logging Preparation
 
 $AppName = "WindowsCleanup"
@@ -69,8 +75,6 @@ $builtinappstoremove = @(
   "Microsoft.WindowsFeedbackHub"
   "Microsoft.Wallet"
   "Microsoft.StorePurchaseApp"
-  "Microsoft.MicrosoftEdge"
-  "Microsoft.MicrosoftEdge.Stable"
   "Microsoft.People"
   "Microsoft.MicrosoftStickyNotes"
   "Microsoft.MicrosoftSolitaireCollection"
@@ -87,8 +91,6 @@ $builtinappstoremove = @(
   "Microsoft.ZuneMusic"
   "Microsoft.YourPhone"
   "Microsoft.WindowsMaps"
-  "Microsoft.MicrosoftEdgeDevToolsClient"
-  "Microsoft.EdgeDevtoolsPlugin"
   "Microsoft.Print3D"
   "MicrosoftTeams"
   "Microsoft.Xbox.TCUI"
